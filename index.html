@@ -4,33 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Site</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+25+Charted&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
-      <h1>Melbourne</h1>
-      <h2>Australia</h2>
-      <p>
-        Wednesday 2:00pm, sunny <br />
-        humidty: 20% wind 2km/hr
-      </p>
+      <h1 class="title-city">&nbsp;&nbsp;&nbsp;Melbourne&nbsp;&nbsp;&nbsp;</h1>
+      <div class="weather-details">
+        <div class="title-country">Australia</div>
+
+        <div class="current-weather-details">
+          Wednesday 2:00pm, sunny <br />
+          humidty: 20% wind 2km/hr
+        </div>
+        <div class="current-temperature">
+          <span class="current-temperature-emoji">☀️</span>
+          20°C
+        </div>
+      </div>
       <form>
         <input
           type="search"
           name="Enter City"
+          class="change-city-search"
           id="change-city"
-          value="Enter a city..."
+          placeholder="Enter a city..."
         />
-        <input type="submit" value="Change" />
+        <input type="submit" value="Change" class="change-city-button" />
       </form>
+      <hr class="horizontal-break hr1" />
+      <hr class="horizontal-break hr2" />
+      <hr class="horizontal-break hr3" />
+      <hr class="horizontal-break hr4" />
+      <hr class="horizontal-break hr5" />
       <main>
-        <ul>
-          <li>Sunday 12/10</li>
-          <li>Sunday 12/10</li>
-          <li>Sunday 12/10</li>
-          <li>Sunday 12/10</li>
-          <li>Sunday 12/10</li>
-        </ul>
+        <div class="future-forecast">
+          <div>
+            Sunday
+            <div class="future-forecast-emoji">☀️</div>
+            <div>12/10</div>
+          </div>
+          <div>
+            Sunday
+            <div class="future-forecast-emoji">☀️</div>
+            <div>12/10</div>
+          </div>
+          <div>
+            Sunday
+            <div class="future-forecast-emoji">☀️</div>
+            <div>12/10</div>
+          </div>
+          <div>
+            Sunday
+            <div class="future-forecast-emoji">☀️</div>
+            <div>12/10</div>
+          </div>
+          <div>
+            Sunday
+            <div class="future-forecast-emoji">☀️</div>
+            <div>12/10</div>
+          </div>
+        </div>
       </main>
+      <hr class="horizontal-break" />
       <footer>
         This site was coded by
         <a href="https://github.com/gelbwong" target="_blank">Karina Wong</a>,

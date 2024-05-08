@@ -1,0 +1,151 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #2f210d;
+}
+:root {
+  --container-width: 72vmin;
+  --factor: 5.8;
+}
+.container {
+  margin: 0 auto;
+  margin-top: 40px;
+  text-align: center;
+  width: var(--container-width);
+  height: calc(var(--container-width) / var(--factor) * 4.5);
+  max-width: 950px;
+  background-color: #e9dec8;
+  border-radius: 4px;
+  padding: 10px;
+  overflow: hidden;
+  box-shadow: #211709c7 20px 20px 20px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-family: "Jersey 25 Charted", sans-serif;
+  color: rgb(61, 61, 61);
+  background-color: #e9dec8;
+  font-weight: 400;
+  max-block-size: 250px;
+}
+.container h1 {
+  font-size: calc(var(--container-width) / var(--factor));
+  margin-top: calc(var(--container-width) / var(--factor) * 0.15);
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: calc(var(--container-width) / var(--factor) * 0.28);
+  margin-bottom: calc(var(--container-width) / var(--factor) * 0.15);
+}
+/**/
+.title-country,
+.weather-details,
+.current-weather-details,
+.current-temperature {
+  font-family: monospace;
+  color: rgb(94, 94, 94);
+}
+.title-country {
+  font-weight: 550;
+  padding: 5px 0 0 5px;
+}
+.current-temperature {
+  font-weight: 600;
+}
+.container .title-country {
+  font-size: calc(var(--container-width) / var(--factor) * 0.25);
+}
+.current-weather-details {
+  position: relative;
+  top: calc(var(--container-width) / var(--factor) * 0.05);
+}
+.container .current-weather-details {
+  font-size: calc(var(--container-width) / var(--factor) * 0.12);
+}
+.container .current-temperature {
+  font-size: calc(var(--container-width) / var(--factor) * 0.25);
+  position: relative;
+  top: calc(var(--container-width) / var(--factor) * 0.02);
+}
+
+.horizontal-break {
+  padding: calc(var(--container-width) / var(--factor) * 0.015);
+  margin: calc(var(--container-width) / var(--factor) * 0.07);
+  border-radius: 2px;
+}
+.hr1 {
+  background-color: red;
+}
+.hr2 {
+  background: orange;
+}
+.hr3 {
+  background-color: yellow;
+}
+.hr4 {
+  background-color: green;
+}
+.hr5 {
+  background-color: blue;
+}
+form {
+  margin-top: calc(var(--container-width) / var(--factor) * 0.3);
+}
+.change-city-search,
+.change-city-button {
+  background-color: #e9dec8;
+  border: solid 1px rgba(128, 128, 128, 0.619);
+  /* padding: 20px;*/
+  font-family: monospace;
+  color: gray;
+  border-radius: 4px;
+}
+.container .change-city-search,
+.change-city-button {
+  padding: calc(var(--container-width) / var(--factor) * 0.1);
+}
+
+.container .change-city-button {
+  font-size: calc(var(--container-width) / var(--factor) * 0.1);
+}
+.container .change-city-search {
+  font-size: calc(var(--container-width) / var(--factor) * 0.1);
+}
+.change-city-search {
+  width: 84%;
+}
+.change-city-button {
+  margin-left: 8px;
+  transition: all 400ms ease-in-out;
+}
+.change-city-button:hover {
+  cursor: pointer;
+  background-color: #473317ee;
+}
+.future-forecast {
+  display: flex;
+  justify-content: space-around;
+  font-family: monospace;
+  color: gray;
+}
+.container .future-forecast {
+  font-size: calc(var(--container-width) / var(--factor) * 0.1);
+  margin-top: calc(var(--container-width) / var(--factor) * 0.2);
+  margin-bottom: calc(var(--container-width) / var(--factor) * 0.2);
+}
+footer {
+  font-family: monospace;
+  color: gray;
+}
+.container footer {
+  font-size: calc(var(--container-width) / var(--factor) * 0.08);
+  margin-top: calc(var(--container-width) / var(--factor) * 0.2);
+}
