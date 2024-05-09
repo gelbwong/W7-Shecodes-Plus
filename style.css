@@ -65,7 +65,7 @@ h1 {
   font-size: calc(var(--container-width) / var(--factor) * 0.25);
   position: relative;
   right: calc(var(--container-width) / var(--factor) * 0.17);
-  top: calc(var(--container-width) / var(--factor) * 0.1);
+  bottom: calc(var(--container-width) / var(--factor) * 0.05);
 }
 .current-weather-details {
   position: relative;
@@ -75,14 +75,14 @@ h1 {
   font-size: calc(var(--container-width) / var(--factor) * 0.1);
   position: relative;
   left: calc(var(--container-width) / var(--factor) * 0.5);
-  top: calc(var(--container-width) / var(--factor) * 0.14);
+  top: calc(var(--container-width) / var(--factor) * 0.01);
 }
 .container .current-temperature {
   font-size: calc(var(--container-width) / var(--factor) * 0.25);
 }
 .whole-current-temperature {
   position: relative;
-  top: calc(var(--container-width) / var(--factor) * 0.02);
+  bottom: calc(var(--container-width) / var(--factor) * 0.17);
   left: calc(var(--container-width) / var(--factor) * 0.1);
 }
 
@@ -90,7 +90,7 @@ h1 {
   width: calc(var(--container-width) / var(--factor) * 0.35);
   height: calc(var(--container-width) / var(--factor) * 0.35);
   position: relative;
-  top: calc(var(--container-width) / var(--factor) * 0.08);
+  bottom: calc(var(--container-width) / var(--factor) * 0.08);
   left: calc(var(--container-width) / var(--factor) * 0.1);
 }
 .horizontal-break {
@@ -114,7 +114,10 @@ h1 {
   background-color: blue;
 }
 form {
-  margin-top: calc(var(--container-width) / var(--factor) * 0.3);
+  position: relative;
+  bottom: calc(var(--container-width) / var(--factor) * 0.1);
+  margin-top: calc(var(--container-width) / var(--factor) * 0.1);
+  margin-bottom: calc(var(--container-width) / var(--factor) * 0.1);
 }
 .change-city-search,
 .change-city-button {
@@ -157,6 +160,10 @@ form {
   font-size: calc(var(--container-width) / var(--factor) * 0.1);
   margin-top: calc(var(--container-width) / var(--factor) * 0.2);
   margin-bottom: calc(var(--container-width) / var(--factor) * 0.2);
+}
+.hr6 {
+  position: relative;
+  top: calc(var(--container-width) / var(--factor) * 0.1);
 }
 footer {
   font-family: monospace;
