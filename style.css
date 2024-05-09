@@ -16,7 +16,7 @@ body {
   margin-top: 40px;
   text-align: center;
   width: var(--container-width);
-  height: calc(var(--container-width) / var(--factor) * 4.5);
+  height: calc(var(--container-width) / var(--factor) * 4.9);
   max-width: 950px;
   background-color: #e9dec8;
   border-radius: 4px;
@@ -166,6 +166,10 @@ form {
   font-size: calc(var(--container-width) / var(--factor) * 0.1);
   margin-top: calc(var(--container-width) / var(--factor) * 0.2);
   margin-bottom: calc(var(--container-width) / var(--factor) * 0.2);
+}
+.future-forecast-emoji {
+  width: calc(var(--container-width) / var(--factor) * 0.5);
+  height: calc(var(--container-width) / var(--factor) * 0.5);
 }
 .forecast-temp-max {
   color: rgb(68, 68, 68);
