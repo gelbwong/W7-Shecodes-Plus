@@ -26,45 +26,44 @@ function changeCurrentWeather(response) {
     titleElement.innerHTML = response.data.city;
   }
 
-  let blankSpace = "&nbsp";
+  let blank = "&nbsp";
   let blankAElement = document.querySelector("#blankSpacesA");
   let blankBElement = document.querySelector("#blankSpacesB");
 
-  if (response.data.city.length >= 12) {
+  if (response.data.city.length > 11) {
   } else if (
     response.data.city.length === 10 ||
     response.data.city.length === 11
   ) {
-    blankAElement.innerHTML = `${blankSpace}${blankSpace}`;
-    blankBElement.innerHTML = `${blankSpace}${blankSpace}`;
-    console.log("Hello?");
+    blankAElement.innerHTML = `${blank}`;
+    blankBElement.innerHTML = `${blank}`;
   } else if (
     response.data.city.length === 8 ||
     response.data.city.length === 9
   ) {
-    blankAElement.innerHTML = `${blankSpace}${blankSpace}${blankSpace}`;
-    blankBElement.innerHTML = `${blankSpace}${blankSpace}${blankSpace}`;
+    blankAElement.innerHTML = `${blank}${blank}${blank}`;
+    blankBElement.innerHTML = `${blank}${blank}${blank}`;
   } else if (
     response.data.city.length === 6 ||
     response.data.city.length === 7
   ) {
-    blankAElement.innerHTML = `${blankSpace}${blankSpace}${blankSpace}${blankSpace}`;
-    blankBElement.innerHTML = `${blankSpace}${blankSpace}${blankSpace}${blankSpace}`;
+    blankAElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}`;
+    blankBElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}`;
   } else if (
     response.data.city.length === 4 ||
     response.data.city.length === 5
   ) {
-    blankAElement.innerHTML = `${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}`;
-    blankBElement.innerHTML = `${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}`;
+    blankAElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}${blank}${blank}`;
+    blankBElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}${blank}${blank}`;
   } else if (
     response.data.city.length === 2 ||
     response.data.city.length === 3
   ) {
-    blankAElement.innerHTML = `${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}`;
-    blankBElement.innerHTML = `${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}`;
+    blankAElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}${blank}${blank}${blank}`;
+    blankBElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}${blank}${blank}${blank}`;
   } else {
-    blankAElement.innerHTML = `${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}`;
-    blankBElement.innerHTML = `${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}${blankSpace}`;
+    blankAElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}${blank}${blank}${blank}${blank}`;
+    blankBElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}${blank}${blank}${blank}${blank}`;
   }
   //debugger;
 
@@ -72,6 +71,11 @@ function changeCurrentWeather(response) {
   titleCountryElement = document.querySelector(".title-country");
   if (response.data.country === "United States of America") {
     titleCountryElement.innerHTML = "USA";
+  } else if (
+    response.data.country ===
+    "United Kingdom of Great Britain and Northern Ireland"
+  ) {
+    titleCountryElement.innerHTML = "UK";
   } else {
     titleCountryElement.innerHTML = response.data.country;
   }

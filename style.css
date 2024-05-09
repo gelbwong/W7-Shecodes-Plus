@@ -74,23 +74,24 @@ h1 {
 .container .current-weather-details {
   font-size: calc(var(--container-width) / var(--factor) * 0.1);
   position: relative;
-  left: calc(var(--container-width) / var(--factor) * 0.6);
+  left: calc(var(--container-width) / var(--factor) * 0.5);
   top: calc(var(--container-width) / var(--factor) * 0.14);
 }
 .container .current-temperature {
   font-size: calc(var(--container-width) / var(--factor) * 0.25);
+}
+.whole-current-temperature {
   position: relative;
   top: calc(var(--container-width) / var(--factor) * 0.02);
+  left: calc(var(--container-width) / var(--factor) * 0.1);
 }
-.current-temperature-pair {
-  position: relative;
-  left: calc(var(--container-width) / var(--factor) * 0.15);
-}
+
 .weather-icon {
-  width: 50px;
-  height: 50px;
+  width: calc(var(--container-width) / var(--factor) * 0.35);
+  height: calc(var(--container-width) / var(--factor) * 0.35);
   position: relative;
   top: calc(var(--container-width) / var(--factor) * 0.08);
+  left: calc(var(--container-width) / var(--factor) * 0.1);
 }
 .horizontal-break {
   padding: calc(var(--container-width) / var(--factor) * 0.015);
