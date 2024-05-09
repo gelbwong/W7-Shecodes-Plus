@@ -18,7 +18,6 @@ function changeCurrentWeather(response) {
   windElement.innerHTML = response.data.wind.speed;
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon" alt="${response.data.condition.description}" />`;
   dateElement.innerHTML = formatDate(date);
-  console.log(response.data.condition.icon_url);
 
   if (response.data.city === "New York County") {
     titleElement.innerHTML = "New York";
@@ -116,7 +115,29 @@ function changeCityTitle(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div>
+            <div class="forecast-date">${day}</div>
+            <div class="future-forecast-emoji">☀️</div>
+            <div class="forecast-temperature">
+              <span class="forecast-temp-max">12</span>°/<span
+                class="forecast-temp-min"
+                >10</span>°
+            </div> 
+            </div>`;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#changeCityForm");
 searchFormElement.addEventListener("submit", changeCityTitle);
 
 searchCity("Melbourne");
+displayForecast();

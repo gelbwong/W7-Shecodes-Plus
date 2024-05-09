@@ -54,19 +54,24 @@ h1 {
   font-family: monospace;
   color: rgb(94, 94, 94);
 }
+
+.weather-details,
+.current-weather-details {
+  color: rgb(94, 94, 94);
+}
 .title-country {
   font-weight: 550;
   padding: 5px 0 0 5px;
-}
-.current-temperature {
-  font-weight: 600;
-}
-.container .title-country {
   font-size: calc(var(--container-width) / var(--factor) * 0.25);
   position: relative;
   right: calc(var(--container-width) / var(--factor) * 0.17);
   bottom: calc(var(--container-width) / var(--factor) * 0.05);
+  color: rgb(68, 68, 68);
 }
+.current-temperature {
+  font-weight: 600;
+}
+
 .current-weather-details {
   position: relative;
   top: calc(var(--container-width) / var(--factor) * 0.05);
@@ -79,6 +84,7 @@ h1 {
 }
 .container .current-temperature {
   font-size: calc(var(--container-width) / var(--factor) * 0.25);
+  color: rgb(68, 68, 68);
 }
 .whole-current-temperature {
   position: relative;
@@ -160,6 +166,9 @@ form {
   font-size: calc(var(--container-width) / var(--factor) * 0.1);
   margin-top: calc(var(--container-width) / var(--factor) * 0.2);
   margin-bottom: calc(var(--container-width) / var(--factor) * 0.2);
+}
+.forecast-temp-max {
+  color: rgb(68, 68, 68);
 }
 .hr6 {
   position: relative;
