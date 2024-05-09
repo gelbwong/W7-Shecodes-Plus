@@ -31,6 +31,8 @@ function changeCurrentWeather(response) {
   let blankBElement = document.querySelector("#blankSpacesB");
 
   if (response.data.city.length > 11) {
+    blankAElement.innerHTML = ``;
+    blankBElement.innerHTML = ``;
   } else if (
     response.data.city.length === 10 ||
     response.data.city.length === 11
