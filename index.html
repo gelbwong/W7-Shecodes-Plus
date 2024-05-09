@@ -14,7 +14,10 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="title-city">&nbsp;&nbsp;&nbsp;Melbourne&nbsp;&nbsp;&nbsp;</h1>
+      <h1>
+        &nbsp;&nbsp;&nbsp;<span class="title-city">Melbourne</span
+        >&nbsp;&nbsp;&nbsp;
+      </h1>
       <div class="weather-details">
         <div class="title-country">Australia</div>
 
@@ -27,15 +30,15 @@
           20°C
         </div>
       </div>
-      <form>
+      <form id="changeCityForm">
         <input
           type="search"
           name="Enter City"
           class="change-city-search"
-          id="change-city"
+          id="changeCityInput"
           placeholder="Enter a city..."
         />
-        <input type="submit" value="Change" class="change-city-button" />
+        <input type="submit" class="change-city-button" id="changeCityButton" />
       </form>
       <hr class="horizontal-break hr1" />
       <hr class="horizontal-break hr2" />
@@ -84,4 +87,5 @@
       </footer>
     </div>
   </body>
+  <script src="app.js"></script>
 </html>
