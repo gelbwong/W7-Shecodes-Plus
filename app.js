@@ -2,7 +2,6 @@ function changeCurrentWeather(response) {
   let changeCurrentTemp = document.querySelector(".current-temperature");
   let temp = response.data.temperature.current;
 
-  let titleElement = document.querySelector(".title-city");
   let weatherConditionElement = document.querySelector(
     "#currentWeatherCondition"
   );
@@ -18,48 +17,54 @@ function changeCurrentWeather(response) {
   windElement.innerHTML = response.data.wind.speed;
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon" alt="${response.data.condition.description}" />`;
   dateElement.innerHTML = formatDate(date);
+  changeBlanks(response.data.city);
+  changeCity(response.data.city);
+  changeCountry(response.data.country);
+  getForecast(response.data.city);
 
-  if (response.data.city === "New York County") {
+  changeCurrentTemp.innerHTML = Math.round(temp);
+}
+function changeCountry(country) {
+  let titleCountryElement = document.querySelector(".title-country");
+  if (country === "United States of America") {
+    titleCountryElement.innerHTML = "USA";
+  } else if (
+    country === "United Kingdom of Great Britain and Northern Ireland"
+  ) {
+    titleCountryElement.innerHTML = "UK";
+  } else {
+    titleCountryElement.innerHTML = country;
+  }
+}
+function changeCity(city) {
+  let titleElement = document.querySelector(".title-city");
+  if (city === "New York County") {
     titleElement.innerHTML = "New York";
   } else {
-    titleElement.innerHTML = response.data.city;
+    titleElement.innerHTML = city;
   }
-
+}
+function changeBlanks(city) {
   let blank = "&nbsp";
   let blankAElement = document.querySelector("#blankSpacesA");
   let blankBElement = document.querySelector("#blankSpacesB");
 
-  if (response.data.city.length > 11) {
+  if (city.length > 11) {
     blankAElement.innerHTML = ``;
     blankBElement.innerHTML = ``;
-  } else if (
-    response.data.city.length === 10 ||
-    response.data.city.length === 11
-  ) {
+  } else if (city.length === 10 || city.length === 11) {
     blankAElement.innerHTML = `${blank}`;
     blankBElement.innerHTML = `${blank}`;
-  } else if (
-    response.data.city.length === 8 ||
-    response.data.city.length === 9
-  ) {
+  } else if (city.length === 8 || city.length === 9) {
     blankAElement.innerHTML = `${blank}${blank}${blank}`;
     blankBElement.innerHTML = `${blank}${blank}${blank}`;
-  } else if (
-    response.data.city.length === 6 ||
-    response.data.city.length === 7
-  ) {
+  } else if (city.length === 6 || city.length === 7) {
     blankAElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}`;
     blankBElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}`;
-  } else if (
-    response.data.city.length === 4 ||
-    response.data.city.length === 5
-  ) {
+  } else if (city.length === 4 || city.length === 5) {
     blankAElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}${blank}${blank}`;
     blankBElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}${blank}${blank}`;
-  } else if (
-    response.data.city.length === 2 ||
-    response.data.city.length === 3
-  ) {
+  } else if (city.length === 2 || city.length === 3) {
     blankAElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}${blank}${blank}${blank}`;
     blankBElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}${blank}${blank}${blank}`;
   } else {
@@ -67,19 +72,6 @@ function changeCurrentWeather(response) {
     blankBElement.innerHTML = `${blank}${blank}${blank}${blank}${blank}${blank}${blank}${blank}${blank}`;
   }
   //debugger;
-
-  changeCurrentTemp.innerHTML = Math.round(temp);
-  titleCountryElement = document.querySelector(".title-country");
-  if (response.data.country === "United States of America") {
-    titleCountryElement.innerHTML = "USA";
-  } else if (
-    response.data.country ===
-    "United Kingdom of Great Britain and Northern Ireland"
-  ) {
-    titleCountryElement.innerHTML = "UK";
-  } else {
-    titleCountryElement.innerHTML = response.data.country;
-  }
 }
 function formatDate(date) {
   let days = [
@@ -115,7 +107,8 @@ function changeCityTitle(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
   let forecastHtml = "";
   days.forEach(function (day) {
@@ -135,9 +128,13 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
-
+function getForecast(city) {
+  let apiKey = "a5ca0d6dt74bbobcf0c9aa390574f791";
+  let unit = "metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 let searchFormElement = document.querySelector("#changeCityForm");
 searchFormElement.addEventListener("submit", changeCityTitle);
 
 searchCity("Melbourne");
-displayForecast();
