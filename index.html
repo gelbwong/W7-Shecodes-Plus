@@ -16,17 +16,20 @@
   <body>
     <div class="container">
       <h1>
-        &nbsp;&nbsp;&nbsp;<span class="title-city"></span>&nbsp;&nbsp;&nbsp;
+        <span id="blankSpacesA"></span><span class="title-city"></span>
+        <span id="blankSpacesB"></span>
       </h1>
       <div class="weather-details">
         <div class="title-country"></div>
 
         <div class="current-weather-details">
-          Wednesday 2:00pm, sunny <br />
-          humidty: 20% wind 2km/hr
+          <span id="date">Wednesday 2:00pm</span>,
+          <span id="currentWeatherCondition">sunny</span> <br />
+          humidty: <span id="humidity">20</span>% wind
+          <span id="windSpeed">2</span>km/hr
         </div>
         <div class="current-temperature-pair">
-          <span class="current-temperature-emoji">☀️</span>
+          <span id="weatherIcon"></span>
           <span class="current-temperature"></span>°C
         </div>
       </div>
